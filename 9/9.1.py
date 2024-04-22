@@ -30,7 +30,7 @@ class PowerLawTransformationApp:
         self.image_path = filedialog.askopenfilename(initialdir=initial_dir, filetypes=[("All files", "*.*")])
         if self.image_path:
             if self.image_path.lower().endswith(('.jpg', '.png', '.bmp', '.tif')):
-                self.original_image = Image.open(self.image_path).convert("L")
+                self.original_image = Image.open(self.image_path)
                 self.image = ImageTk.PhotoImage(self.original_image)
                 self.image_label.config(image=self.image)
                 self.save_button.config(state=tk.NORMAL)
